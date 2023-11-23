@@ -2,10 +2,10 @@
 - hosts: all
   become: true
   tasks:
-    - name: Execute directadmin version command
-      command: /usr/local/directadmin/directadmin version
-      register: directadmin_version_output
+    - name: Execute da build phpmyadmin command
+      command: da build phpmyadmin
+      register: phpmyadmin_build_output
 
-    - name: Display directadmin version output
+    - name: Display da build phpmyadmin output
       debug:
-        var: directadmin_version_output.stdout_lines
+        var: phpmyadmin_build_output.stdout_lines
