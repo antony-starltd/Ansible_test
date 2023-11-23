@@ -1,11 +1,13 @@
 ---
 - hosts: all
-  become: true
-  tasks:
-    - name: Execute da build update_versions
-      command: da build update_versions
-      register: update_versions_output
 
-    - name: Display update_versions output
+  become: true
+
+  tasks:
+    - name: Execute ls command
+      command: ls
+      register: ls_output
+
+    - name: Display ls output
       debug:
-        var: update_versions_output.stdout_lines
+        var: ls_output.stdout_lines
