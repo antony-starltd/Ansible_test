@@ -2,10 +2,10 @@
 - hosts: all
   become: true
   tasks:
-    - name: Execute da build update_versions
-      command: da build update_versions
-      register: update_versions_output
+    - name: Execute directadmin version command
+      command: /usr/local/directadmin/directadmin version
+      register: directadmin_version_output
 
-    - name: Display update_versions output
+    - name: Display directadmin version output
       debug:
-        var: update_versions_output.stdout_lines
+        var: directadmin_version_output.stdout_lines
