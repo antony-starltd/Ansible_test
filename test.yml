@@ -4,10 +4,7 @@
   become: true
 
   tasks:
-    - name: Execute ls command
-      command: ls
-      register: ls_output
-
-    - name: Display ls output
-      debug:
-        var: ls_output.stdout_lines
+    - name: Update and Upgrade packages
+      apt:
+        update_cache: yes
+        upgrade: yes
